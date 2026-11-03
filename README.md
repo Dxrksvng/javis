@@ -1,4 +1,35 @@
-# Luminous
+<div align="center">
+
+# Luminous (javis)
+
+**A personal AI assistant that aims to become your own Jarvis: honest, knowledgeable, voice-enabled.**
+
+![Next.js 15](https://img.shields.io/badge/Next.js-15-000000?style=for-the-badge&logo=nextdotjs&logoColor=white) ![FastAPI backend](https://img.shields.io/badge/FastAPI-backend-009688?style=for-the-badge&logo=fastapi&logoColor=white) ![LLM Claude · GPT · Ollama](https://img.shields.io/badge/LLM-Claude_·_GPT_·_Ollama-7C3AED?style=for-the-badge) ![Voice Whisper STT + TTS](https://img.shields.io/badge/Voice-Whisper_STT_+_TTS-10A37F?style=for-the-badge)
+
+</div>
+
+## Tech stack
+
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=nextjs,react,ts,tailwind,threejs,py,fastapi&perline=10" alt="Tech stack" />
+</p>
+
+## Architecture
+
+```mermaid
+flowchart LR
+    U([User]) -->|"text or voice"| W["apps/web\nNext.js 15 hologram UI\nZustand, Three.js, Framer Motion"]
+    W <-->|"REST + WebSocket"| API["apps/api\nFastAPI"]
+    API --> CH["chat / voice / search /\nlanguage / models endpoints"]
+    CH --> MS["model_switcher\nautomatic fallback"]
+    MS --> CL["Cloud LLMs\nAnthropic, OpenAI"]
+    MS --> OL["Local Ollama"]
+    CH --> STT["stt_service\nWhisper (Thai supported)"]
+    CH --> TTS["tts_service\nEdge-TTS / Coqui"]
+    CH --> WS["web_search_service"]
+```
+
+---
 
 Personal AI Assistant for Je — Aiming to become your personal Jarvis.
 
